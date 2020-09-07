@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Stylesheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { images } from '../Utils/CoinIcons';
 
 const styles = StyleSheet.create({
