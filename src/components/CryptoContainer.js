@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { View, ScrollView } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 
-import FetchCoinData from '../../Actions/FetchCoinData';
+import FetchCoinData from '../Actions/FetchCoinData';
 import CoinCard from './CoinCard';
 
 class CryptoContainer extends Component {
@@ -12,7 +12,7 @@ class CryptoContainer extends Component {
   }
   renderCoinCards() {
     const { crypto } = this.props;
-    return crypto.data.map(coin => {
+    return crypto.data?.map(coin => {
       <CoinCard 
         key={coin.name}
         coin_name={coin.name}
@@ -31,7 +31,7 @@ class CryptoContainer extends Component {
       return (
         <View>
           <Spinner 
-            visible={isFetching}
+            visible={crypto.isFetching}
             textContent="Loading..."
             textStyle={{ color: "#253145" }}
             animation="fade"
